@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Commerce Portal</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    nav { background: #333; padding: 10px; }
+    nav ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+    section { padding: 20px; }
+    form input, form button { display: block; margin: 10px 0; padding: 8px; width: 300px; }
+    .container { max-width: 800px; margin: auto; }
+    h2 { border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+  </style>
+  <script>
+    function validateForm(id) {
+      const form = document.getElementById(id);
+      form.addEventListener("submit", function(e) {
+        const email = form.email.value;
+        const password = form.password.value;
+        if (!email.includes("@")) {
+          alert("Please enter a valid email.");
+          e.preventDefault();
+        }
+        if (password.length < 6) {
+          alert("Password must be at least 6 characters.");
+          e.preventDefault();
+        }
+      });
+    }
+    window.onload = function() {
+      validateForm("registerForm");
+      validateForm("loginForm");
+    };
+  </script>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Product Items</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#about">About Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="home">
+      <h2>Welcome to Our E-Commerce Portal</h2>
+      <p>Shop the best products at unbeatable prices!</p>
+    </section>
+
+    <section id="products">
+      <h2>Product Items</h2>
+      <ul>
+        <li>Smartphone - ₹15,000</li>
+        <li>Laptop - ₹45,000</li>
+        <li>Headphones - ₹2,000</li>
+      </ul>
+    </section>
+
+    <section id="register">
+      <h2>User Registration</h2>
+      <form id="registerForm">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <section id="login">
+      <h2>User Login</h2>
+      <form id="loginForm">
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section id="orders">
+      <h2>Orders List</h2>
+      <ul>
+        <li>Order #101 - Delivered</li>
+        <li>Order #102 - In Transit</li>
+      </ul>
+    </section>
+
+    <section id="wishlist">
+      <h2>Wishlist</h2>
+      <ul>
+        <li>Smartwatch</li>
+        <li>Bluetooth Speaker</li>
+      </ul>
+    </section>
+
+    <section id="reviews">
+      <h2>Comments & Reviews</h2>
+      <p>“Great service and fast delivery!” – Aarthi</p>
+      <p>“Product quality is excellent.” – Ravi</p>
+    </section>
+
+    <section id="support">
+      <h2>Customer Care</h2>
+      <p>📞 Call us at 1800-123-456</p>
+      <p>📧 Email: support@ecommerce.com</p>
+    </section>
+
+    <section id="reporting">
+      <h2>Reporting Options</h2>
+      <p><a href="#contact">Report an issue</a> | <a href="#contact">Request refund</a></p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Fill out the form or reach us via email.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We are a leading online marketplace offering a wide range of products at competitive prices.</p>
+    </section>
+  </div>
+
+</body>
+</html>
